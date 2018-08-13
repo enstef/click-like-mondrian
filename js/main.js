@@ -15,28 +15,43 @@ function Rect(x, y, width, height) {
   this.y = y;
   this.width = width;
   this.height = height;
+  this.minWidth = 37.5;
+  this.minHeight = 37.5;
   
   this.draw = function() {
-    game.ctx.fillStyle = "red";
-    game.ctx.globalAlpha = 0.2;
-    game.ctx.fillRect(this.x, this.y, this.width, this.height);
     game.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    game.ctx.lineWidth = 10;
   };
   
   this.splitVertikal = function() {
+    if (this.width > this.minWidth) {
       this.width = this.width / 2;
       var newRect = new Rect(this.x + this.width, this.y, this.width, this.height);
       rectangles.push(newRect);
+    }
   };
   
   this.splitHorizontal = function() {
+    if (this.height > this.minHeight) {
       this.height = this.height / 2;
       var newRect = new Rect(this.x, this.y + this.height, this.width, this.height)
       rectangles.push(newRect);
+    }
   };
+
+  this.colorRectangle = function () {
+    // maaaaaaaan
+    // colors = ["transparent", "#624eb9", "#f04443", "#feee4e"];
+    // var i = 1;
+    // game.ctx.fillStyle = colors[i++%colors.length];
+    game.ctx.fillRect(this.x, this.y, this.width, this.height);
+    game.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    game.ctx.lineWidth = 10;
+  }
 }
 
 
+rectangles[0].draw();
 rectangles[0].draw();
 
 function drawRectangles(rectangles) {
@@ -47,79 +62,26 @@ function drawRectangles(rectangles) {
 
 
 canvas.onclick = function(e) {
-  console.log(e);
-  game.ctx.clearRect(0,0,game.width, game.height);
-  drawRectangles(rectangles);
   var yClicked = e.offsetY;
   var xClicked = e.offsetX;
   for (var i = 0; i < rectangles.length; i++) {
     var rect = rectangles[i]
-    console.log(rect);
     if (rect.x <= xClicked && xClicked <= rect.x+rect.width && rect.y <= yClicked && yClicked <= rect.y+rect.height) {
-      console.log("The rectangle with the following index was clicked", i);
+      rect.colorRectangle();
       if (xClicked < rect.x+30 || xClicked > rect.x+rect.width-30){
-        console.log("why")
         rect.splitVertikal();
+        game.ctx.clearRect(0,0,game.width, game.height);
+
+        drawRectangles(rectangles)
         return;
       }
-      if (yClicked < rect.y+30 || yClicked > rect.y+rect.height-30){
+      else if (yClicked < rect.y+30 || yClicked > rect.y+rect.height-30){
         rect.splitHorizontal();
+        game.ctx.clearRect(0,0,game.width, game.height);
+
+        drawRectangles(rectangles)
         return;
       }
     }
   }
 }
-
-
-
-// var rect = {
-//   x : 0,
-//   y : 0,
-//   width : game.width,
-//   height : game.height,
-
-//   draw : function() {
-//     game.ctx.strokeRect(this.x, this.y, this.width, this.height);
-//   },
-
-//   vertikalSplit : function() {
-//     // console.log(rect)
-//     // console.log(rect.draw())
-//     onclick = function() {
-//       rect.width = rect.width / 2;
-//       // rectangles.push(rect);
-//     };
-//   },
-
-//   horizontalSplit : function() {
-//     onkeydown = function() {
-//       rect.height = rect.height / 2;
-//       // rectangles.push(rect);
-//     };
-//   },
-
-  // hint : function() {
-  //   onmouseover = function(event) {
-  //     var mx = event.offsetX;
-  //     var my = event.offsetY;
-  //     console.log("x", mx, "y", my);
-  //     if(my < 30) {
-  //       horizontalSplit();
-  //     }
-  //     if(my < )
-  //   }
-  // }
-
-// };
-
-// function rectUpdate() {
-//   rect.draw();
-
-//   rect.vertikalSplit();
-
-//   rect.horizontalSplit();
-//   // rect.hint();
-
-//   requestAnimationFrame(rectUpdate);
-// }
-// requestAnimationFrame(rectUpdate);
