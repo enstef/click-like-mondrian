@@ -18,23 +18,9 @@ function drawRectangles(rectangles) {
     rectangles[i].draw();
   }
 }
-var saves = [];
-function save() {
-  saves.push(rectangles);
-}
-
-
-document.getElementById("undo").onclick = function() {
-  console.log("why");
-  saves.splice(saves.length-2, 2);
-  game.ctx.clearRect(0, 0, game.width, game.height);
-  drawRectangles(saves);
-}
-
 
 //-------------------Click-------------------//
 canvas.onclick = function (e) {
-  save();
 
   var xClicked = e.offsetX;
   var yClicked = e.offsetY;
@@ -229,18 +215,60 @@ function clearAndSplitHorizontal(rect) {
   game.ctx.clearRect(0, 0, game.width, game.height);
   rect.splitHorizontal();
   drawRectangles(rectangles);
-  //save();
 }
 
 function clearAndSplitVertikal(rect) {
   game.ctx.clearRect(0, 0, game.width, game.height);
   rect.splitVertikal();
   drawRectangles(rectangles);
-   //save();
 }
 
 function clearAndColor(rect) {
   game.ctx.clearRect(0, 0, game.width, game.height);
   rect.colorRectangle();
   drawRectangles(rectangles);
+}
+
+
+//-------------------Good Lord-------------------//
+testLevel = 
+  [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 300,
+      "height": 600,
+      "color": "transparent"
+    },
+    {
+      "x": 300,
+      "y": 0,
+      "width": 300,
+      "height": 600,
+      "color": "transparent"
+    }
+  ]
+
+function win(level) {
+  var score = 0;
+  for (var i = 0; i < rectangles.length; i++) {
+    for (var j = 0; j < level.length; j++) {
+      if (rectangles[i].x === level[j].x) {  
+        score++; 
+      }
+      if (rectangles[i].width === level[j].width) {
+        score++;
+      }
+      if (rectangles[i].colors === level[j].colors) {
+        score++;
+      }
+    }
+  }
+  return score;
+}
+
+document.getElementById("check").onclick = function() {
+  win(testLevel);
+  console.log(win().score)
+  console.log("why")
 }

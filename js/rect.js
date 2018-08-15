@@ -5,7 +5,7 @@ function Rect(x, y, width, height) {
   this.height = height;
   this.minWidth = 37.5;
   this.minHeight = 37.5;
-  this.possibleColors = ["transparent", "#624eb9", "#f04443", "#feee4e"];
+  this.possibleColors = ["transparent", "#624eb9", "#f04443", "#feee4e", "black"];
   this.index = 0;
   this.color = this.possibleColors[this.index];
 
