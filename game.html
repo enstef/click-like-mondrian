@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,700,900" rel="stylesheet">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div id="intro">
+    
+    <h1>Before one can create art, one has to study at it.</h1>
+    <p>You now have 10 seconds to memorize an (almost) original Mondrian.</p>
+    <a id="begin">BEGIN</a>
+
+  </div>
+
+  <div id="original" class="hide">
+
+    <div>
+    <img id="original-img" src="https://imgplaceholder.com/500x500" alt="reference"/>
+    <p id="kgds">Loosly based on</p>
+    <p id="title">This originals' title</p>
+    <p id="year">0000</p>
+    </div>
+
+  </div>
+  
+  <div id="grades" class="hide">
+
+    <h1>Your score is</h1>
+    <p id="score"></p>
+    <p id="encouragement"></p>
+    <a id="cont">CONTINUE</a>
+    
+  </div>
+
+    <div class="container game">
+
+      <a class="home" href="index.html">BACK</a>
+      <canvas id="canvas" width="600" height="600"></canvas>
+      <a id="finish" href="#">DONE</a>
+
+    </div>
+
+  <script src="./js/rect.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/levels.js"></script>
+  <script src="./js/dom.js"></script>
+
+</body>
+</html>

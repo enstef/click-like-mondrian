@@ -229,18 +229,16 @@ function clearAndColor(rect) {
   drawRectangles(rectangles);
 }
 
-
 //-------------------Score-------------------//
 
-function score(level) {
-  var score = 0;
-
+function calculateScore(level) {
+  var score = -2;
+  
   rectangles.sort(function(a,b) {
     return a.x - b.x || a.y - b.y
   });
 
- if (rectangles.length <= level.length) {
-    for (var i = 0; i < rectangles.length; i++) {
+    for (var i = 0; i < level.length; i++) {
       if (rectangles[i].x === level[i].x) {  
         score++; 
       }
@@ -257,8 +255,19 @@ function score(level) {
         score++;
       }
     }
+
+  return score = Math.round(score/(level.length*5)*100);
+}
+
+function ecouragement(score) {
+
+  if (score >= 80) {
+    return "You have an excellent eye and memory, congratulation!";
   }
-  
-  console.log(score);
-  return score;
+  else if (score >= 50) {
+    return "Between you and me - what do we even need grades for, right?";
+  }
+  else {
+    return "You are a true artist at heart.";
+  }
 }

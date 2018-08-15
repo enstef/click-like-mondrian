@@ -1,3 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body {
+  background: linear-gradient(white, seashell);
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  border-left: 5px solid black;
+  padding: 5px 15px;
+  display: inline-block;
+}
+a:hover {
+  color: white;
+  background-color: black;;
+}
+h1 {
+  margin-bottom: 30px;
+  letter-spacing: 0.2em;
+}
+p {
+  line-height: 1.4em;
+}
+
+body {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.game {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.shift {
+  margin-left: -7.1vw;
+}
+
 #canvas {
   border: 5px solid black;
+  margin: 0 20px;
 }
+
+.home {
+  align-self: flex-start;
+}
+#finish {
+  align-self: flex-end;
+}
+
+/* -------------intro---------- */
+#begin, #cont {
+  border: 5px solid black;
+}
+#intro {
+  position: absolute;
+  background: rgba(255,255,255,0.8);
+  width: 95vw;
+  height: 50vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#intro p {
+  margin-bottom: 30px;
+}
+
+/* -------------memorize img---------- */
+#original {
+  position: absolute;
+  background: rgba(255,255,255,1);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#original-img {
+  width: 500px;
+  height: 500px;
+  margin-bottom: 10px;
+}
+#kgds {
+  font-weight: 300;
+  font-size: 0.6em;
+}
+#title {
+  font-weight: 700;
+  line-height: 2em;
+}
+#year {
+  font-weight: 300;
+}
+/* -------------grades---------- */
+#grades {
+  position: absolute;
+  background: rgba(255,255,255,0.8);
+  width: 95vw;
+  height: 50vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#score {
+  font-weight: 700;
+  font-size: 3em;
+  letter-spacing: 0.2em;
+}
+#grades p {
+  margin-bottom: 30px;
+}
+
+
+/* index.html */
+.logo {
+  margin-left: 10vw;
+  font-weight: 400;
+  font-size: 1.5em;
+  letter-spacing: 0.5em;
+}
+ul {
+  width: 200px;
+  margin-left: 10vw;
+  list-style: none;
+}
+ul > p {
+  font-size: 0.8em;
+  line-height: 1.2em;
+}
+ul > li {
+  margin: 20px 0 10px 0;
+  padding: 5px 0px;
+}
+
+
+.instructions-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+#instructions-heading {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  letter-spacing: 0.2em;
+}
+.instructions {
+  width: 320px;
+}
+.instructions:first-child {
+  margin-right: 100px;
+}
+.instructions img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  border: 7px solid black;
+  margin-bottom: 10px;
+}
+
