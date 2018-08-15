@@ -230,45 +230,35 @@ function clearAndColor(rect) {
 }
 
 
-//-------------------Good Lord-------------------//
-testLevel = 
-  [
-    {
-      "x": 0,
-      "y": 0,
-      "width": 300,
-      "height": 600,
-      "color": "transparent"
-    },
-    {
-      "x": 300,
-      "y": 0,
-      "width": 300,
-      "height": 600,
-      "color": "transparent"
-    }
-  ]
+//-------------------Score-------------------//
 
-function win(level) {
+function score(level) {
   var score = 0;
-  for (var i = 0; i < rectangles.length; i++) {
-    for (var j = 0; j < level.length; j++) {
-      if (rectangles[i].x === level[j].x) {  
+
+  rectangles.sort(function(a,b) {
+    return a.x - b.x || a.y - b.y
+  });
+
+ if (rectangles.length <= level.length) {
+    for (var i = 0; i < rectangles.length; i++) {
+      if (rectangles[i].x === level[i].x) {  
         score++; 
       }
-      if (rectangles[i].width === level[j].width) {
+      if (rectangles[i].y === level[i].y) {  
+        score++; 
+      }
+      if (rectangles[i].width === level[i].width) {
         score++;
       }
-      if (rectangles[i].colors === level[j].colors) {
+      if (rectangles[i].height === level[i].height) {
+        score++;
+      }
+      if (rectangles[i].color === level[i].color) {
         score++;
       }
     }
   }
+  
+  console.log(score);
   return score;
-}
-
-document.getElementById("check").onclick = function() {
-  win(testLevel);
-  console.log(win().score)
-  console.log("why")
 }
