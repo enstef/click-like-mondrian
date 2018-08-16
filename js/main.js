@@ -232,31 +232,42 @@ function clearAndColor(rect) {
 //-------------------Score-------------------//
 
 function calculateScore(level) {
-  var score = -2;
+  var score = 0;
   
   rectangles.sort(function(a,b) {
     return a.x - b.x || a.y - b.y
   });
 
-    for (var i = 0; i < level.length; i++) {
-      if (rectangles[i].x === level[i].x) {  
-        score++; 
-      }
-      if (rectangles[i].y === level[i].y) {  
-        score++; 
-      }
-      if (rectangles[i].width === level[i].width) {
-        score++;
-      }
-      if (rectangles[i].height === level[i].height) {
-        score++;
-      }
-      if (rectangles[i].color === level[i].color) {
-        score++;
-      }
-    }
+  if (rectangles.length > level.length) {
+    var difference = rectangles.length - level.length;
+    rectangles.splice(rectangles.length-difference, difference)
+  };
 
-  return score = Math.round(score/(level.length*5)*100);
+  for (var i = 0; i < rectangles.length; i++) {
+    if (rectangles[i].x === level[i].x) {
+      score++;
+    }
+    if (rectangles[i].y === level[i].y) {
+      score++;
+    }
+    if (rectangles[i].width === level[i].width) {
+      score++;
+    }
+    if (rectangles[i].height === level[i].height) {
+      score++;
+    }
+    if (rectangles[i].color === level[i].color) {
+      score++;
+    }
+  };
+
+  score = Math.round(score/(level.length*5)*100);
+
+  if(rectangles.length === 1) {
+    score = 0;
+  }
+
+  return score
 }
 
 function ecouragement(score) {
@@ -270,4 +281,11 @@ function ecouragement(score) {
   else {
     return "You are a true artist at heart.";
   }
+}
+
+function startOver() {
+  rectangles = [new Rect(0, 0, game.width, game.height)];
+  game.ctx.clearRect(0, 0, game.width, game.height);
+  rectangles[0].draw();
+  rectangles[0].draw();
 }

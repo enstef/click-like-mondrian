@@ -1,3 +1,4 @@
+/* -------------general---------- */
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +35,6 @@ h1 {
 p {
   line-height: 1.4em;
 }
-
 body {
   display: flex;
   flex-flow: column wrap;
@@ -42,6 +42,16 @@ body {
   justify-content: center;
   height: 100vh;
 }
+
+#canvas {
+  border: 5px solid black;
+  margin: 0 20px;
+}
+.home {
+  align-self: flex-start;
+}
+
+/* -------------campaign---------- */
 .game {
   display: flex;
   flex-flow: row nowrap;
@@ -49,35 +59,45 @@ body {
 .shift {
   margin-left: -7.1vw;
 }
-
-#canvas {
-  border: 5px solid black;
-  margin: 0 20px;
-}
-
-.home {
-  align-self: flex-start;
-}
-#finish {
+.finish {
   align-self: flex-end;
+}
+.passive {
+  pointer-events: none;
+  opacity: 0.2;
 }
 
 /* -------------intro---------- */
-#begin, #cont {
+#begin, .cont, #end{
   border: 5px solid black;
 }
 #intro {
   position: absolute;
-  background: rgba(255,255,255,0.8);
+  /* background: rgba(255,255,255,0.8); */
   width: 95vw;
   height: 50vh;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
-#intro p {
+#intro p, #outro p{
   margin-bottom: 30px;
+}
+br {
+  line-height: 2em;
+}
+#outro {
+  position: absolute;
+  /* background: rgba(255,255,255,0.8); */
+  width: 95vw;
+  height: 50vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* -------------memorize img---------- */
@@ -110,7 +130,7 @@ body {
 /* -------------grades---------- */
 #grades {
   position: absolute;
-  background: rgba(255,255,255,0.8);
+  /* background: rgba(255,255,255,0.8); */
   width: 95vw;
   height: 50vh;
   display: flex;
@@ -128,7 +148,7 @@ body {
 }
 
 
-/* index.html */
+/* -------------index---------- */
 .logo {
   margin-left: 10vw;
   font-weight: 400;
@@ -149,7 +169,7 @@ ul > li {
   padding: 5px 0px;
 }
 
-
+/* -------------instructions---------- */
 .instructions-container {
   display: flex;
   flex-flow: row nowrap;
