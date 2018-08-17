@@ -190,7 +190,7 @@ canvas.onmousemove = function (e) {
 canvas.onmouseleave = function() {
   game.ctx.clearRect(0, 0, game.width, game.height);
   drawRectangles(rectangles);
-}
+};
 
 
 //-------------------Repetitive Functions-------------------//
