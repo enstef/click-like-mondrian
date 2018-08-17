@@ -6,7 +6,7 @@ $("#begin").click(function(){
   $("#title").html("Composition III With Blue, Yellow And White");
   $("#year").html("1936");
   setTimeout(function() {$(".passive").removeClass("passive");},300);
-  $("#original").fadeIn().delay(3000).fadeOut();
+  $("#original").fadeIn().delay(1000).fadeOut();
 });
 
 $("#finish1").click(function(){
@@ -24,13 +24,14 @@ $("#cont1").click(function(){
   $("#title").html("Composition II In Red, Blue and Yellow");
   $("#year").html("1930");
   setTimeout(function() {$(".passive").removeClass("passive");},300);
-  $("#original").fadeIn().delay(5000).fadeOut();
+  $("#original").fadeIn().delay(7000).fadeOut();
   $(startOver());
   $("#cont1").hide();
   $("#cont2").show();
 });
 
 $("#finish2").click(function(){
+  $("#solution").attr("src", "./img/level2.png");
   $("#score").html(calculateScore(level2) + "%");
   $("#encouragement").html(ecouragement(calculateScore(level2)));
   $("#grades").fadeIn();
@@ -45,13 +46,14 @@ $("#cont2").click(function(){
   $("#title").html("Composition C");
   $("#year").html("1935");
   setTimeout(function() {$(".passive").removeClass("passive");},300);
-  $("#original").fadeIn().delay(5000).fadeOut();
+  $("#original").fadeIn().delay(7000).fadeOut();
   $(startOver());
   $("#cont2").hide();
   $("#cont3").show();
 });
 
 $("#finish3").click(function(){
+  $("#solution").attr("src", "./img/level3.png");
   $("#score").html(calculateScore(level3) + "%");
   $("#encouragement").html(ecouragement(calculateScore(level3)));
   $("#grades").fadeIn();
@@ -66,13 +68,14 @@ $("#cont3").click(function(){
   $("#title").html("Composition With Large Red Plane, Yellow, Black, Gray And Blue");
   $("#year").html("1921");
   setTimeout(function() {$(".passive").removeClass("passive");},300);
-  $("#original").fadeIn().delay(5000).fadeOut();
+  $("#original").fadeIn().delay(10000).fadeOut();
   $(startOver());
   $("#cont3").hide();
   $("#cont4").show();
 });
 
 $("#finish4").click(function(){
+  $("#solution").attr("src", "./img/level4.png");
   $("#score").html(calculateScore(level4) + "%");
   $("#encouragement").html(ecouragement(calculateScore(level4)));
   $("#grades").fadeIn();

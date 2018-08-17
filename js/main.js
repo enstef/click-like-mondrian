@@ -186,7 +186,14 @@ canvas.onmousemove = function (e) {
     }
   }
 }
+//-------------------Leave-------------------//
+canvas.onmouseleave = function() {
+  game.ctx.clearRect(0, 0, game.width, game.height);
+  drawRectangles(rectangles);
+}
 
+
+//-------------------Repetitive Functions-------------------//
 function clearAndHintBottom(rect) {
   game.ctx.clearRect(0, 0, game.width, game.height);
   rect.hintBottom();
@@ -230,7 +237,6 @@ function clearAndColor(rect) {
 }
 
 //-------------------Score-------------------//
-
 function calculateScore(level) {
   var score = 0;
   
@@ -283,6 +289,7 @@ function ecouragement(score) {
   }
 }
 
+//-------------------New Level-------------------//
 function startOver() {
   rectangles = [new Rect(0, 0, game.width, game.height)];
   game.ctx.clearRect(0, 0, game.width, game.height);

@@ -127,6 +127,7 @@ br {
 #year {
   font-weight: 300;
 }
+
 /* -------------grades---------- */
 #grades {
   position: absolute;
@@ -137,6 +138,11 @@ br {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+}
+#solution {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 30px;
 }
 #score {
   font-weight: 700;
