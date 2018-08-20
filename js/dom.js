@@ -6,7 +6,7 @@ $("#begin").click(function(){
   $("#title").html("Composition III With Blue, Yellow And White");
   $("#year").html("1936");
   setTimeout(function() {$(".passive").removeClass("passive");},300);
-  $("#original").fadeIn().delay(1000).fadeOut();
+  $("#original").fadeIn().delay(5000).fadeOut();
 });
 
 $("#finish1").click(function(){
@@ -24,7 +24,7 @@ $("#cont1").click(function(){
   $("#title").html("Composition II In Red, Blue and Yellow");
   $("#year").html("1930");
   setTimeout(function() {$(".passive").removeClass("passive");},300);
-  $("#original").fadeIn().delay(7000).fadeOut();
+  $("#original").fadeIn().delay(7500).fadeOut();
   $(startOver());
   $("#cont1").hide();
   $("#cont2").show();
@@ -46,7 +46,7 @@ $("#cont2").click(function(){
   $("#title").html("Composition C");
   $("#year").html("1935");
   setTimeout(function() {$(".passive").removeClass("passive");},300);
-  $("#original").fadeIn().delay(7000).fadeOut();
+  $("#original").fadeIn().delay(7500).fadeOut();
   $(startOver());
   $("#cont2").hide();
   $("#cont3").show();
