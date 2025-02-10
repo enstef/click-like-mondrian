@@ -1,76 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Click Like Mondrian</title>
-  <link rel="icon" href="./img/level4.png">
-  <link rel="stylesheet" href="./style/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,700,900" rel="stylesheet">
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-</head>
-<body>
-
-  <div id="intro">
-    
-    <h1>Before one can create art, one has to study it.</h1>
-    <p></p>You will have 5 to 10 seconds to memorize an (almost) original Mondrian <br>depending on its' complexity.</p>
-    <a id="begin">BEGIN</a>
-
-  </div>
-
-  <div id="original" class="hide">
-
-    <div>
-    <img id="original-img" src="https://imgplaceholder.com/500x500" alt="level"/>
-    <p id="kgds">Loosly based on</p>
-    <p id="title">This originals' title</p>
-    <p id="year">0000</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Click Like Mondrian</title>
+    <link rel="icon" href="./img/level4.png" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,700,900"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="intro">
+      <h1>Before one can create art, one has to study it.</h1>
+      <p>
+        You will have 5 to 10 seconds to memorize an (almost) original Mondrian
+        depending on its' complexity.
+      </p>
+      <a id="begin">BEGIN</a>
     </div>
 
-  </div>
-  
-  <div id="grades" class="hide">
+    <div id="original" class="hide">
+      <div>
+        <img
+          id="original-img"
+          src="https://imgplaceholder.com/500x500"
+          alt="level"
+        />
+        <p id="kgds">Loosly based on</p>
+        <p id="title">This originals' title</p>
+        <p id="year">0000</p>
+      </div>
+    </div>
 
-    <img id="solution" src="./img/level1.png" alt="level"/>
-    <h1>Your score is</h1>
-    <p id="score"></p>
-    <p id="encouragement"></p>
-    <a id="cont1" class="cont">CONTINUE</a>
-    <a id="cont2" class="cont hide">CONTINUE</a>
-    <a id="cont3" class="cont hide">CONTINUE</a>
-    <a id="cont4" class="cont hide">CONTINUE</a>
-    
-  </div>
+    <div id="grades" class="hide">
+      <img id="solution" src="./img/level1.png" alt="level" />
+      <h1>Your score is</h1>
+      <p id="score"></p>
+      <p id="encouragement"></p>
+      <a id="cont1" class="cont">CONTINUE</a>
+      <a id="cont2" class="cont hide">CONTINUE</a>
+      <a id="cont3" class="cont hide">CONTINUE</a>
+      <a id="cont4" class="cont hide">CONTINUE</a>
+    </div>
 
-  <div id="outro" class="hide">
-    
-    <h1>It's now time to venture out and create.</h1>
-    <p></p>You finished the campaign, but don't expect a reward. <br>You are an artist now.</p>
-    <a id="end" href="index.html">BE THAT ARTIST</a>
-
-  </div>
+    <div id="outro" class="hide">
+      <h1>It's now time to venture out and create.</h1>
+      <p>
+        You finished the campaign, but don't expect a reward. You are an artist
+        now.
+      </p>
+      <a id="end" href="index.html">BE THAT ARTIST</a>
+    </div>
 
     <div class="container game">
-
       <a class="home" href="index.html">BACK</a>
-      <canvas id="canvas" class="passive active" width="600" height="600"></canvas>
+      <canvas
+        id="canvas"
+        class="passive active"
+        width="600"
+        height="600"
+      ></canvas>
       <a id="finish1" class="finish passive active" href="#">DONE</a>
       <a id="finish2" class="finish passive active hide" href="#">DONE</a>
       <a id="finish3" class="finish passive active hide" href="#">DONE</a>
       <a id="finish4" class="finish passive active hide" href="#">DONE</a>
-
-
     </div>
 
-  <script src="./js/rect.js"></script>
-  <script src="./js/main.js"></script>
-  <script src="./js/levels.js"></script>
-  <script src="./js/dom.js"></script>
-
-</body>
+    <script src="./js/rect.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/levels.js"></script>
+    <script src="./js/dom.js"></script>
+  </body>
 </html>

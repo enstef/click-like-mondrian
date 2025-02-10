@@ -2,14 +2,14 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   overflow: hidden;
   -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 body {
   background: linear-gradient(white, seashell);
@@ -23,17 +23,18 @@ a {
   border-left: 5px solid black;
   padding: 5px 15px;
   display: inline-block;
+  cursor: pointer;
 }
 a:hover {
   color: white;
-  background-color: black;;
+  background-color: black;
 }
 h1 {
   margin-bottom: 30px;
   letter-spacing: 0.2em;
 }
 p {
-  line-height: 1.4em;
+  line-height: 1.6em;
 }
 body {
   display: flex;
@@ -68,12 +69,13 @@ body {
 }
 
 /* -------------intro---------- */
-#begin, .cont, #end{
+#begin,
+.cont,
+#end {
   border: 5px solid black;
 }
 #intro {
   position: absolute;
-  /* background: rgba(255,255,255,0.8); */
   width: 95vw;
   height: 50vh;
   display: flex;
@@ -82,7 +84,9 @@ body {
   align-items: center;
   text-align: center;
 }
-#intro p, #outro p{
+#intro p,
+#outro p {
+  max-width: 500px;
   margin-bottom: 30px;
 }
 br {
@@ -90,7 +94,6 @@ br {
 }
 #outro {
   position: absolute;
-  /* background: rgba(255,255,255,0.8); */
   width: 95vw;
   height: 50vh;
   display: flex;
@@ -103,7 +106,7 @@ br {
 /* -------------memorize img---------- */
 #original {
   position: absolute;
-  background: rgba(255,255,255,1);
+  background: rgba(255, 255, 255, 1);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -153,7 +156,6 @@ br {
   margin-bottom: 30px;
 }
 
-
 /* -------------index---------- */
 .logo {
   margin-left: 10vw;
@@ -198,4 +200,3 @@ ul > li {
   border: 7px solid black;
   margin-bottom: 10px;
 }
-
